@@ -1,0 +1,117 @@
+{
+  "clients": [
+    {
+      "id": "tiberio",
+      "client_name": "Tibério",
+      "job": "Nutricionista",
+      "slug": "nutri_tibas",
+      "avatar_url": "/mock/tiberio/avatar.png",
+      "posters": [
+        {
+          "id": "suplemento-nao-e-milagre",
+          "title": "Suplemento não é milagre",
+          "subtitle": "Suplemento pode ajudar.\nMas ele não faz milagre.\nAntes de comprar whey, creatina ou qualquer outro suplemento, a pergunta principal é:\nisso resolve uma necessidade real da minha rotina ou é só impulso?\nSuplementos funcionam melhor quando entram como estratégia, não como substituição do básico.\nEles podem fazer sentido quando você tem dificuldade para bater proteína, uma rotina corrida, pouca praticidade ou uma necessidade específica dentro do seu plano alimentar.\nMas quando a alimentação está desorganizada, o treino não tem constância e não existe orientação, o suplemento pode virar apenas mais um gasto sem resultado.\nO básico ainda manda:\n✅ alimentação ajustada\n✅ treino consistente\n✅ sono e recuperação\n✅ estratégia individualizada\n✅ acompanhamento profissional\nSuplemento bom é aquele que faz sentido para você.\nSalve esse post para lembrar antes da próxima compra.\nE se tiver dúvida sobre qual suplemento usar, procure orientação profissional.\n#nutricao #nutricionista #suplementacao #wheyprotein #creatina #emagrecimento #hipertrofia #composicaocorporal #nutricaoesportiva #vidasaudavel",
+          "cover": "/mock/tiberio/posters/suplemento-nao-e-milagre/1.png",
+          "images": [
+            {
+              "id": "suplemento-nao-e-milagre-1",
+              "image_url": "/mock/tiberio/posters/suplemento-nao-e-milagre/1.png",
+              "download_url": "/mock/tiberio/posters/suplemento-nao-e-milagre/1.png",
+              "file_name": "suplemento-nao-e-milagre-1.png",
+              "sort_order": 1,
+              "type": "feed"
+            },
+            {
+              "id": "suplemento-nao-e-milagre-2",
+              "image_url": "/mock/tiberio/posters/suplemento-nao-e-milagre/2.png",
+              "download_url": "/mock/tiberio/posters/suplemento-nao-e-milagre/2.png",
+              "file_name": "suplemento-nao-e-milagre-2.png",
+              "sort_order": 2,
+              "type": "feed"
+            },
+            {
+              "id": "suplemento-nao-e-milagre-3",
+              "image_url": "/mock/tiberio/posters/suplemento-nao-e-milagre/3.png",
+              "download_url": "/mock/tiberio/posters/suplemento-nao-e-milagre/3.png",
+              "file_name": "suplemento-nao-e-milagre-3.png",
+              "sort_order": 3,
+              "type": "feed"
+            },
+            {
+              "id": "suplemento-nao-e-milagre-4",
+              "image_url": "/mock/tiberio/posters/suplemento-nao-e-milagre/4.png",
+              "download_url": "/mock/tiberio/posters/suplemento-nao-e-milagre/4.png",
+              "file_name": "suplemento-nao-e-milagre-4.png",
+              "sort_order": 4,
+              "type": "feed"
+            }
+          ]
+        },
+        {
+          "id": "refeicao-pre-e-pos-treino",
+          "title": "Refeição pré e pós-treino",
+          "subtitle": "Pré e pós-treino importam mais do que muita gente imagina. 👊🍽️\n\nO que você come antes do treino ajuda a garantir mais energia, resistência e desempenho.\nJá a refeição depois do treino é essencial para apoiar a recuperação muscular, reposição de energia e melhores resultados.\n\nAntes do treino, priorize alimentos que forneçam energia gradual, como:\n\n✅ aveia\n✅ banana\n✅ batata-doce\n✅ frutas\n✅ iogurte\n✅ ovos\n\nDepois do treino, foque em uma refeição mais completa, combinando:\n\n✅ proteínas magras\n✅ carboidratos\n✅ vegetais\n✅ boas fontes de gordura\n\nMas lembre: não existe uma única refeição perfeita para todo mundo.\nA melhor estratégia depende do seu objetivo, rotina, tipo de treino e necessidades individuais.\n\n📌 Salve esse post para consultar antes do próximo treino.\n\nQuer ajustar sua alimentação para melhorar seus resultados? Procure acompanhamento nutricional.\n\n#NutriçãoEsportiva #PréTreino #PósTreino #AlimentaçãoSaudável #Hipertrofia #Emagrecimento #Performance #Treino #Dieta #TibérioFernandesNutricionista",
+          "cover": "/mock/tiberio/posters/refeicao-pre-e-pos-treino/1.png",
+          "images": [
+            {
+              "id": "refeicao-pre-e-pos-treino-1",
+              "image_url": "/mock/tiberio/posters/refeicao-pre-e-pos-treino/1.png",
+              "download_url": "/mock/tiberio/posters/refeicao-pre-e-pos-treino/1.png",
+              "file_name": "refeicao-pre-e-pos-treino-1.png",
+              "sort_order": 1,
+              "type": "feed"
+            },
+            {
+              "id": "refeicao-pre-e-pos-treino-2",
+              "image_url": "/mock/tiberio/posters/refeicao-pre-e-pos-treino/2.png",
+              "download_url": "/mock/tiberio/posters/refeicao-pre-e-pos-treino/2.png",
+              "file_name": "refeicao-pre-e-pos-treino-2.png",
+              "sort_order": 2,
+              "type": "feed"
+            },
+            {
+              "id": "refeicao-pre-e-pos-treino-3",
+              "image_url": "/mock/tiberio/posters/refeicao-pre-e-pos-treino/3.png",
+              "download_url": "/mock/tiberio/posters/refeicao-pre-e-pos-treino/3.png",
+              "file_name": "refeicao-pre-e-pos-treino-3.png",
+              "sort_order": 3,
+              "type": "feed"
+            },
+            {
+              "id": "refeicao-pre-e-pos-treino-4",
+              "image_url": "/mock/tiberio/posters/refeicao-pre-e-pos-treino/4.png",
+              "download_url": "/mock/tiberio/posters/refeicao-pre-e-pos-treino/4.png",
+              "file_name": "refeicao-pre-e-pos-treino-4.png",
+              "sort_order": 4,
+              "type": "feed"
+            }
+          ]
+        },
+        {
+          "id": "beneficios-de-ovos-no-cafe-da-manha",
+          "title": "Benefícios de ovos no café da manhã",
+          "subtitle": "O ovo é um dos alimentos mais completos para incluir no café da manhã. 🍳\nAlém de ser prático, acessível e versátil, ele ajuda a começar o dia com mais saciedade e qualidade nutricional.\nRico em proteínas, vitaminas e gorduras boas, o ovo pode contribuir para:\n✅ manutenção e ganho de massa magra\n✅ maior saciedade ao longo da manhã\n✅ controle da fome\n✅ suporte à saúde do coração\n✅ melhora da qualidade da alimentação\nMas atenção: o ovo sozinho não faz milagre.\nEle funciona melhor quando faz parte de uma rotina alimentar equilibrada, ajustada ao seu objetivo e ao seu gasto energético.\nSeja para emagrecimento, hipertrofia ou melhora da saúde, o café da manhã precisa ter estratégia.\n📌 Salve esse post para lembrar na próxima refeição.\nQuer saber como montar um café da manhã ideal para o seu objetivo? Procure acompanhamento nutricional.\n#Nutrição #CaféDaManhã #Ovos #AlimentaçãoSaudável #NutriçãoEsportiva #Emagrecimento #Hipertrofia #GanhoDeMassa #Saúde #TibérioFernandesNutricionista",
+          "cover": "/mock/tiberio/posters/beneficios-de-ovos-no-cafe-da-manha/feed.png",
+          "images": [
+            {
+              "id": "beneficios-de-ovos-no-cafe-da-manha-story",
+              "image_url": "/mock/tiberio/posters/beneficios-de-ovos-no-cafe-da-manha/story.png",
+              "download_url": "/mock/tiberio/posters/beneficios-de-ovos-no-cafe-da-manha/story.png",
+              "file_name": "story.png",
+              "sort_order": 1,
+              "type": "story"
+            },
+            {
+              "id": "beneficios-de-ovos-no-cafe-da-manha-feed",
+              "image_url": "/mock/tiberio/posters/beneficios-de-ovos-no-cafe-da-manha/feed.png",
+              "download_url": "/mock/tiberio/posters/beneficios-de-ovos-no-cafe-da-manha/feed.png",
+              "file_name": "feed.png",
+              "sort_order": 2,
+              "type": "feed"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

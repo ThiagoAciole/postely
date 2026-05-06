@@ -1,0 +1,37 @@
+.header-root {
+  border-bottom: 1px solid #d9dde6;
+  background: #f4f5f8;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .header-container {
+    padding: 0 24px;
+  }
+}
+
+.header-center {
+  justify-content: center;
+}
+
+.header-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-logo-image {
+  display: block;
+  height: 42px;
+  width: auto;
+}

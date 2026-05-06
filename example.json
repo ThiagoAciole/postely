@@ -1,0 +1,100 @@
+{
+  "galleries": [
+    {
+      "id": "tiberio",
+      "client_name": "Tibério",
+      "job": "Nutricionista",
+      "slug": "nutri_tibas",
+      "avatar_url": "/mock/tiberio/avatar.png",
+      "posters": [
+        {
+          "id": "tiberio-poster-001",
+          "title": "Suplemento não é milagre",
+          "subtitle": "Resultados vêm de constância. Suplemento ajuda, mas não faz milagre.",
+          "cover": "/mock/suplemento-nao-e-milagre/1.png",
+          "images": [
+            {
+              "id": "suplemento-nao-e-milagre-1",
+              "image_url": "/mock/suplemento-nao-e-milagre/1.png",
+              "download_url": "/mock/suplemento-nao-e-milagre/1.png",
+              "file_name": "suplemento-nao-e-milagre-1.png",
+              "sort_order": 1
+            },
+            {
+              "id": "suplemento-nao-e-milagre-2",
+              "image_url": "/mock/suplemento-nao-e-milagre/2.png",
+              "download_url": "/mock/suplemento-nao-e-milagre/2.png",
+              "file_name": "suplemento-nao-e-milagre-2.png",
+              "sort_order": 2
+            },
+            {
+              "id": "suplemento-nao-e-milagre-3",
+              "image_url": "/mock/suplemento-nao-e-milagre/3.png",
+              "download_url": "/mock/suplemento-nao-e-milagre/3.png",
+              "file_name": "suplemento-nao-e-milagre-3.png",
+              "sort_order": 3
+            }
+          ]
+        },
+        {
+          "id": "tiberio-poster-002",
+          "title": "Refeição pré e pós-treino",
+          "subtitle": "Estratégias de refeição para manter energia antes do treino e acelerar a recuperação depois.",
+          "cover": "/mock/refeicao-pre-e-pos-treino/1.png",
+          "images": [
+            {
+              "id": "refeicao-pre-e-pos-treino-1",
+              "image_url": "/mock/refeicao-pre-e-pos-treino/1.png",
+              "download_url": "/mock/refeicao-pre-e-pos-treino/1.png",
+              "file_name": "refeicao-pre-e-pos-treino-1.png",
+              "sort_order": 1
+            },
+            {
+              "id": "refeicao-pre-e-pos-treino-2",
+              "image_url": "/mock/refeicao-pre-e-pos-treino/2.png",
+              "download_url": "/mock/refeicao-pre-e-pos-treino/2.png",
+              "file_name": "refeicao-pre-e-pos-treino-2.png",
+              "sort_order": 2
+            },
+            {
+              "id": "refeicao-pre-e-pos-treino-3",
+              "image_url": "/mock/refeicao-pre-e-pos-treino/3.png",
+              "download_url": "/mock/refeicao-pre-e-pos-treino/3.png",
+              "file_name": "refeicao-pre-e-pos-treino-3.png",
+              "sort_order": 3
+            }
+          ]
+        },
+        {
+          "id": "tiberio-poster-003",
+          "title": "Benefícios de ovos no café da manhã",
+          "subtitle": "Proteína e saciedade no início do dia para melhorar foco e controle da fome.",
+          "cover": "/mock/beneficios-de-ovos-no-cafe-da-manha/1.png",
+          "images": [
+            {
+              "id": "beneficios-de-ovos-no-cafe-da-manha-1",
+              "image_url": "/mock/beneficios-de-ovos-no-cafe-da-manha/1.png",
+              "download_url": "/mock/beneficios-de-ovos-no-cafe-da-manha/1.png",
+              "file_name": "beneficios-de-ovos-no-cafe-da-manha-1.png",
+              "sort_order": 1
+            },
+            {
+              "id": "beneficios-de-ovos-no-cafe-da-manha-2",
+              "image_url": "/mock/beneficios-de-ovos-no-cafe-da-manha/2.png",
+              "download_url": "/mock/beneficios-de-ovos-no-cafe-da-manha/2.png",
+              "file_name": "beneficios-de-ovos-no-cafe-da-manha-2.png",
+              "sort_order": 2
+            },
+            {
+              "id": "beneficios-de-ovos-no-cafe-da-manha-3",
+              "image_url": "/mock/beneficios-de-ovos-no-cafe-da-manha/3.png",
+              "download_url": "/mock/beneficios-de-ovos-no-cafe-da-manha/3.png",
+              "file_name": "beneficios-de-ovos-no-cafe-da-manha-3.png",
+              "sort_order": 3
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

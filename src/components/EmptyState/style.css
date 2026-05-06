@@ -1,0 +1,14 @@
+.empty-state-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+  background: #fff;
+}
+
+.empty-state-center {
+  text-align: center;
+}
+
+.empty-state-muted {
+  color: #6b7280;
+}

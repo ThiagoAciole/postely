@@ -1,0 +1,10 @@
+.loading-state-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+  background: #fff;
+}
+
+.loading-state-center {
+  text-align: center;
+}

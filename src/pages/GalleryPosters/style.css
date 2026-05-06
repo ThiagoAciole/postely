@@ -1,0 +1,78 @@
+.gallery-posters-container {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+  .gallery-posters-container {
+    padding: 0 24px;
+  }
+}
+
+.gallery-posters-page-space {
+  padding-top: 52px;
+  padding-bottom: 52px;
+}
+
+.gallery-posters-layout {
+  display: grid;
+  gap: 24px;
+}
+
+.gallery-posters-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #4267f5;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.gallery-posters-title {
+  font-size: 3rem;
+  margin: 0;
+  line-height: 1;
+}
+
+.gallery-posters-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.gallery-posters-count-pill {
+  border-radius: 999px;
+  background: #dce4ff;
+  color: #4267f5;
+  min-height: 36px;
+  padding: 6px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.gallery-posters-grid-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #6a7385;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 760px) {
+  .gallery-posters-page-space {
+    padding-top: 28px;
+    padding-bottom: 34px;
+  }
+
+  .gallery-posters-title-row {
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,19 @@
+:root {
+  font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  color: #0f172a;
+  background: #ebedf2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #ebedf2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
