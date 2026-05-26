@@ -110,6 +110,62 @@
               "type": "feed"
             }
           ]
+        },
+        {
+          "id": "cuscuz-beneficios",
+          "title": "Cuscuz: simples, barato e aliado na dieta",
+          "subtitle": "O cuscuz é simples, acessível e pode ser um grande aliado dentro de uma alimentação equilibrada.\n\nAlém de oferecer volume com menos calorias, ele ajuda na saciedade e pode ser uma boa opção para quem busca emagrecer, ganhar massa ou organizar melhor a rotina alimentar.\n\nCom 50g, o cuscuz cozido costuma oferecer menos calorias e carboidratos quando comparado a opções como pão francês e tapioca, além de ser leve, prático e confortável para a digestão.\n\nTambém é uma opção sem glúten e fonte de energia para o café da manhã, pré-treino ou uma rotina corrida.\n\nE o melhor: combina com tudo.\nVocê pode transformar o cuscuz em uma refeição mais completa adicionando ovos, queijo, frango desfiado, carne moída ou leite.\n\n📌 Salve esse post para lembrar de incluir o cuscuz de forma estratégica na sua alimentação.\n\n#Nutrição #Cuscuz #AlimentaçãoSaudável #Emagrecimento #Hipertrofia #CaféDaManhã #PréTreino #Dieta #Saúde #TibérioFernandesNutricionista",
+          "cover": "/mock/tiberio/posters/cuscuz-beneficios/1.png",
+          "images": [
+            {
+              "id": "cuscuz-beneficios-1",
+              "image_url": "/mock/tiberio/posters/cuscuz-beneficios/1.png",
+              "download_url": "/mock/tiberio/posters/cuscuz-beneficios/1.png",
+              "file_name": "cuscuz-beneficios-1.png",
+              "sort_order": 1,
+              "type": "feed"
+            },
+            {
+              "id": "cuscuz-beneficios-2",
+              "image_url": "/mock/tiberio/posters/cuscuz-beneficios/2.png",
+              "download_url": "/mock/tiberio/posters/cuscuz-beneficios/2.png",
+              "file_name": "cuscuz-beneficios-2.png",
+              "sort_order": 2,
+              "type": "feed"
+            },
+            {
+              "id": "cuscuz-beneficios-3",
+              "image_url": "/mock/tiberio/posters/cuscuz-beneficios/3.png",
+              "download_url": "/mock/tiberio/posters/cuscuz-beneficios/3.png",
+              "file_name": "cuscuz-beneficios-3.png",
+              "sort_order": 3,
+              "type": "feed"
+            },
+            {
+              "id": "cuscuz-beneficios-4",
+              "image_url": "/mock/tiberio/posters/cuscuz-beneficios/4.png",
+              "download_url": "/mock/tiberio/posters/cuscuz-beneficios/4.png",
+              "file_name": "cuscuz-beneficios-4.png",
+              "sort_order": 4,
+              "type": "feed"
+            },
+            {
+              "id": "cuscuz-beneficios-5",
+              "image_url": "/mock/tiberio/posters/cuscuz-beneficios/5.png",
+              "download_url": "/mock/tiberio/posters/cuscuz-beneficios/5.png",
+              "file_name": "cuscuz-beneficios-5.png",
+              "sort_order": 5,
+              "type": "feed"
+            },
+            {
+              "id": "cuscuz-beneficios-6",
+              "image_url": "/mock/tiberio/posters/cuscuz-beneficios/6.png",
+              "download_url": "/mock/tiberio/posters/cuscuz-beneficios/6.png",
+              "file_name": "cuscuz-beneficios-6.png",
+              "sort_order": 6,
+              "type": "feed"
+            }
+          ]
         }
       ]
     }
