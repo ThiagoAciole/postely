@@ -127,7 +127,11 @@ export function GalleryPosters() {
             <div className="gallery-posters-showcase">
               {selectedImage ? (
                 <div className="gallery-posters-preview">
-                  <img src={selectedImage.image_url} alt={selectedImage.file_name} />
+                  <img
+                    src={selectedImage.image_url}
+                    alt={selectedImage.file_name}
+                    decoding="async"
+                  />
                   <button
                     className="gallery-posters-download-current"
                     type="button"
@@ -170,7 +174,7 @@ export function GalleryPosters() {
                     onClick={() => setSelectedIndex(index)}
                     aria-label={`Ver slide ${index + 1}`}
                   >
-                    <img src={image.image_url} alt="" />
+                    <img src={image.image_url} alt="" loading="lazy" decoding="async" />
                   </button>
                 ))}
                 {images.length > 4 ? (

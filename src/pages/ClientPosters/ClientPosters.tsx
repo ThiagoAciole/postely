@@ -118,7 +118,12 @@ export function ClientPosters() {
                     <Images size={13} />
                     {poster.images.length} Slides
                   </Badge>
-                  <img src={poster.cover} alt={poster.title} loading="lazy" />
+                  <img
+                    src={poster.cover}
+                    alt={poster.title}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <CardContent className="client-posters-card-content">
                   <span className="client-posters-date">
