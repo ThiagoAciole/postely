@@ -31,14 +31,14 @@
 
 .client-posters-profile h1 {
   margin: 0 0 4px;
-  color: #242633;
+  color: var(--heading);
   font-size: clamp(2rem, 3.1vw, 2.65rem);
   line-height: 1.03;
   letter-spacing: 0;
 }
 
 .client-posters-muted {
-  color: #717380;
+  color: var(--muted);
   margin: 0;
   font-size: 1.07rem;
   font-weight: 800;
@@ -48,9 +48,9 @@
 }
 
 .client-posters-muted svg {
-  color: #2875ff;
-  fill: #2875ff;
-  stroke: #ffffff;
+  color: var(--blue);
+  fill: var(--blue);
+  stroke: var(--card);
   width: 21px;
   height: 21px;
 }
@@ -60,14 +60,14 @@
   height: 84px;
   flex: 0 0 auto;
   border: 1.5px solid #6d6cf3;
-  box-shadow: 0 7px 18px rgba(20, 24, 38, 0.06);
+  box-shadow: var(--shadow-soft);
 }
 
 .client-posters-count-pill {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: #5f6371;
+  color: var(--muted);
   font-weight: 900;
 }
 
@@ -76,8 +76,8 @@
   height: 30px;
   padding: 5px;
   border-radius: 5px;
-  background: #747988;
-  color: #ffffff;
+  background: var(--muted-strong);
+  color: var(--background);
 }
 
 .client-posters-count-pill div {
@@ -86,13 +86,13 @@
 }
 
 .client-posters-count-pill strong {
-  color: #3d3f4d;
+  color: var(--heading);
   font-size: 1rem;
   line-height: 1;
 }
 
 .client-posters-count-pill span {
-  color: #777a87;
+  color: var(--muted);
   font-size: 0.78rem;
   font-weight: 800;
   line-height: 1;
@@ -140,10 +140,10 @@
   height: 22px;
   min-height: 22px;
   padding: 4px 8px;
-  background: rgba(255, 255, 255, 0.92);
-  color: #555b68;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  color: var(--muted-strong);
   font-size: 0.63rem;
-  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.08);
+  box-shadow: var(--shadow-soft);
 }
 
 .client-posters-card-content {
@@ -151,20 +151,19 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   padding: 18px 19px 16px;
 }
 
 .client-posters-date {
-  color: #747887;
+  color: var(--muted);
   font-size: 0.78rem;
   font-weight: 700;
 }
 
 .client-posters-card-content h3 {
-  min-height: 2.36em;
   margin: 0;
-  color: #111827;
+  color: var(--heading);
   font-size: 1.5rem;
   line-height: 1.18;
   letter-spacing: 0;
@@ -172,12 +171,13 @@
 }
 
 .client-posters-card-content p {
-  min-height: 84px;
-  margin: 0;
-  color: #6d7280;
+  min-height: calc(4 * 1.45em);
+  max-height: calc(4 * 1.45em);
+  margin: -2px 0 0;
+  color: var(--muted);
   font-size: 0.86rem;
   line-height: 1.45;
-  flex: 1;
+  flex: 0 0 auto;
   overflow-wrap: anywhere;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -208,9 +208,9 @@
   width: 45px;
   height: 45px;
   border-radius: 11px;
-  border: 1px solid #c8ccd7;
+  border: 1px solid var(--border);
   background: transparent;
-  color: #111827;
+  color: var(--foreground);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -220,8 +220,13 @@
 
 .client-posters-page-button-active {
   border-color: transparent;
-  color: #ffffff;
+  color: var(--primary-foreground);
   background: linear-gradient(135deg, #8a38f5 0%, #6900dc 100%);
+}
+
+.client-posters-page-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
 }
 
 @media (max-width: 920px) {
@@ -251,7 +256,7 @@
   }
 
   .client-posters-profile h1 {
-    color: #05070d;
+    color: var(--heading);
     font-size: 1.8rem;
   }
 
@@ -284,7 +289,8 @@
   }
 
   .client-posters-card-content p {
-    min-height: 88px;
+    min-height: calc(4 * 1.45em);
+    max-height: calc(4 * 1.45em);
     font-size: clamp(0.8rem, 2.45cqw, 0.9rem);
     -webkit-line-clamp: 4;
     line-clamp: 4;

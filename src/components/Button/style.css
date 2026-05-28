@@ -16,7 +16,7 @@
 
 .button-primary {
   background: linear-gradient(135deg, #8a38f5 0%, #6900dc 100%);
-  color: #fff;
+  color: var(--primary-foreground);
   box-shadow: none;
 }
 
@@ -25,18 +25,18 @@
 }
 
 .button-secondary {
-  background: #ffffff;
-  border-color: #7c14e8;
-  color: #6f12e8;
+  background: var(--surface);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .button-secondary:hover {
-  background: #f6f0ff;
+  background: var(--surface-hover);
 }
 
 .button-danger {
   background: #ef4444;
-  color: #fff;
+  color: #ffffff;
 }
 
 @media (max-width: 520px) {

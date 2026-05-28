@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import logo from "../assets/logo.svg";
+import logoDark from "../assets/logo2.svg";
 import { Header } from "../components/Header/Header";
 
 export function AppLayout() {
@@ -10,7 +11,8 @@ export function AppLayout() {
       <footer className="postely-footer">
         <div className="postely-footer-inner">
           <div className="postely-footer-brand">
-            <img className="postely-footer-logo" src={logo} alt="Postely" />
+            <img className="postely-footer-logo postely-footer-logo-light" src={logo} alt="Postely" />
+            <img className="postely-footer-logo postely-footer-logo-dark" src={logoDark} alt="Postely" />
             <span>Postely © 2024</span>
           </div>
         </div>

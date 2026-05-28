@@ -12,6 +12,8 @@ import type { Client } from "../../types/content";
 import { buildPosterPath } from "../../utils/public-link";
 import "./style.css";
 
+const POSTERS_PER_PAGE = 6;
+
 function getPosterExcerpt(subtitle: string) {
   return subtitle
     .replace(/\s+/g, " ")
@@ -20,14 +22,25 @@ function getPosterExcerpt(subtitle: string) {
 }
 
 function formatPosterDate(date: string) {
-  const [year, month, day] = date.split("-");
+  const [datePart, timePart] = date.split("T");
+  const [year, month, day] = datePart.split("-");
   if (!year || !month || !day) return date;
-  return `${day}/${month}/${year}`;
+  const time = timePart?.slice(0, 5);
+  return time ? `${day}/${month}/${year} ${time}` : `${day}/${month}/${year}`;
+}
+
+function sortPostersByMostRecent(posters: Client["posters"]) {
+  return [...posters].sort(
+    (firstPoster, secondPoster) =>
+      new Date(secondPoster.published_at).getTime() -
+      new Date(firstPoster.published_at).getTime(),
+  );
 }
 
 export function ClientPosters() {
   const { clientSlug } = useParams();
   const [client, setClient] = useState<Client | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -39,6 +52,7 @@ export function ClientPosters() {
       try {
         const foundClient = await getClientBySlug(clientSlug);
         setClient(foundClient);
+        setCurrentPage(1);
       } catch {
         setError("Erro ao carregar cliente.");
       } finally {
@@ -48,6 +62,13 @@ export function ClientPosters() {
 
     loadData();
   }, [clientSlug]);
+
+  const sortedPosters = client ? sortPostersByMostRecent(client.posters) : [];
+  const totalPages = Math.max(1, Math.ceil(sortedPosters.length / POSTERS_PER_PAGE));
+  const currentPagePosters = sortedPosters.slice(
+    (currentPage - 1) * POSTERS_PER_PAGE,
+    currentPage * POSTERS_PER_PAGE,
+  );
 
   return (
     <main className="client-posters-container client-posters-page-space">
@@ -90,7 +111,7 @@ export function ClientPosters() {
           </div>
 
           <div className="client-posters-grid">
-            {client.posters.map((poster) => (
+            {currentPagePosters.map((poster) => (
               <Card key={poster.id} className="client-posters-card">
                 <div className="client-posters-card-cover">
                   <Badge className="client-posters-slide-badge">
@@ -120,16 +141,32 @@ export function ClientPosters() {
             ))}
           </div>
 
-          <nav className="client-posters-pagination" aria-label="Paginação">
-            <button className="client-posters-page-button client-posters-page-button-active">
-              1
-            </button>
-            <button className="client-posters-page-button">2</button>
-            <button className="client-posters-page-button">3</button>
-            <button className="client-posters-page-button" aria-label="Próxima página">
-              <ChevronRight size={19} />
-            </button>
-          </nav>
+          {totalPages > 1 ? (
+            <nav className="client-posters-pagination" aria-label="Paginação">
+              {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
+                <button
+                  key={page}
+                  className={`client-posters-page-button ${
+                    currentPage === page ? "client-posters-page-button-active" : ""
+                  }`.trim()}
+                  type="button"
+                  onClick={() => setCurrentPage(page)}
+                  aria-current={currentPage === page ? "page" : undefined}
+                >
+                  {page}
+                </button>
+              ))}
+              <button
+                className="client-posters-page-button"
+                type="button"
+                onClick={() => setCurrentPage((page) => Math.min(page + 1, totalPages))}
+                disabled={currentPage === totalPages}
+                aria-label="Próxima página"
+              >
+                <ChevronRight size={19} />
+              </button>
+            </nav>
+          ) : null}
         </section>
       ) : null}
     </main>

@@ -13,7 +13,7 @@
 }
 
 .gallery-caption-title {
-  color: #8a8d99;
+  color: var(--muted);
   font-weight: 900;
   font-size: 0.73rem;
   letter-spacing: 0.16em;
@@ -21,13 +21,13 @@
 }
 
 .gallery-caption-icon-button {
-  color: #6f12e8;
+  color: var(--primary);
   background: transparent;
 }
 
 .gallery-caption-card p {
   margin: 0;
-  color: #20242c;
+  color: var(--foreground);
   font-size: 0.98rem;
   line-height: 1.55;
   font-weight: 500;
