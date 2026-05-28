@@ -1,5 +1,13 @@
 import { useEffect, useState } from "react";
-import { BadgeCheck, ChevronRight, ExternalLink, Images, LayoutPanelTop } from "lucide-react";
+import {
+  BadgeCheck,
+  ChevronRight,
+  ExternalLink,
+  Film,
+  Images,
+  LayoutPanelTop,
+  Smartphone,
+} from "lucide-react";
 import { useParams } from "react-router-dom";
 import { EmptyState } from "../../components/EmptyState/EmptyState";
 import { LoadingState } from "../../components/LoadingState/LoadingState";
@@ -8,11 +16,21 @@ import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { getClientBySlug } from "../../services/content.service";
-import type { Client } from "../../types/content";
+import type { Client, PosterFormat } from "../../types/content";
 import { buildPosterPath } from "../../utils/public-link";
 import "./style.css";
 
 const POSTERS_PER_PAGE = 6;
+
+const POSTER_TABS: Array<{
+  label: string;
+  value: PosterFormat;
+  icon: typeof Images;
+}> = [
+  { label: "Feed", value: "feed", icon: Images },
+  { label: "Story", value: "story", icon: Smartphone },
+  { label: "Reels", value: "reels", icon: Film },
+];
 
 function getPosterExcerpt(subtitle: string) {
   return subtitle
@@ -37,9 +55,24 @@ function sortPostersByMostRecent(posters: Client["posters"]) {
   );
 }
 
+function getPosterFormats(poster: Client["posters"][number]) {
+  return poster.formats?.length
+    ? poster.formats
+    : Array.from(new Set(poster.images.map((image) => image.type)));
+}
+
+function getPosterImagesByFormat(poster: Client["posters"][number], format: PosterFormat) {
+  return poster.images.filter((image) => image.type === format);
+}
+
+function getPosterCoverByFormat(poster: Client["posters"][number], format: PosterFormat) {
+  return getPosterImagesByFormat(poster, format)[0]?.image_url ?? poster.cover;
+}
+
 export function ClientPosters() {
   const { clientSlug } = useParams();
   const [client, setClient] = useState<Client | null>(null);
+  const [activeFormat, setActiveFormat] = useState<PosterFormat>("feed");
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -52,6 +85,7 @@ export function ClientPosters() {
       try {
         const foundClient = await getClientBySlug(clientSlug);
         setClient(foundClient);
+        setActiveFormat("feed");
         setCurrentPage(1);
       } catch {
         setError("Erro ao carregar cliente.");
@@ -63,7 +97,19 @@ export function ClientPosters() {
     loadData();
   }, [clientSlug]);
 
-  const sortedPosters = client ? sortPostersByMostRecent(client.posters) : [];
+  const formatCounts = POSTER_TABS.reduce(
+    (counts, tab) => ({
+      ...counts,
+      [tab.value]: client?.posters.filter((poster) =>
+        getPosterFormats(poster).includes(tab.value),
+      ).length ?? 0,
+    }),
+    {} as Record<PosterFormat, number>,
+  );
+  const filteredPosters = client
+    ? client.posters.filter((poster) => getPosterFormats(poster).includes(activeFormat))
+    : [];
+  const sortedPosters = sortPostersByMostRecent(filteredPosters);
   const totalPages = Math.max(1, Math.ceil(sortedPosters.length / POSTERS_PER_PAGE));
   const currentPagePosters = sortedPosters.slice(
     (currentPage - 1) * POSTERS_PER_PAGE,
@@ -110,16 +156,44 @@ export function ClientPosters() {
             </div>
           </div>
 
-          <div className="client-posters-grid">
-            {currentPagePosters.map((poster) => (
+          <div className="client-posters-tabs" role="tablist" aria-label="Tipos de poster">
+            {POSTER_TABS.map((tab) => {
+              const Icon = tab.icon;
+              const isActive = activeFormat === tab.value;
+
+              return (
+                <button
+                  key={tab.value}
+                  className={`client-posters-tab ${
+                    isActive ? "client-posters-tab-active" : ""
+                  }`.trim()}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => {
+                    setActiveFormat(tab.value);
+                    setCurrentPage(1);
+                  }}
+                >
+                  <Icon size={18} />
+                  <span>{tab.label}</span>
+                  <strong>{formatCounts[tab.value]}</strong>
+                </button>
+              );
+            })}
+          </div>
+
+          {currentPagePosters.length > 0 ? (
+            <div className="client-posters-grid">
+              {currentPagePosters.map((poster) => (
               <Card key={poster.id} className="client-posters-card">
                 <div className="client-posters-card-cover">
                   <Badge className="client-posters-slide-badge">
                     <Images size={13} />
-                    {poster.images.length} Slides
+                    {getPosterImagesByFormat(poster, activeFormat).length} Slides
                   </Badge>
                   <img
-                    src={poster.cover}
+                    src={getPosterCoverByFormat(poster, activeFormat)}
                     alt={poster.title}
                     loading="lazy"
                     decoding="async"
@@ -135,16 +209,22 @@ export function ClientPosters() {
                   <Button
                     className="client-posters-link-button"
                     onClick={() =>
-                      (window.location.href = buildPosterPath(client, poster))
+                      (window.location.href = buildPosterPath(client, poster, activeFormat))
                     }
                   >
                     Visualizar e Baixar
                     <ExternalLink size={15} />
                   </Button>
                 </CardContent>
-              </Card>
-            ))}
-          </div>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <EmptyState
+              title={`Nenhum poster de ${POSTER_TABS.find((tab) => tab.value === activeFormat)?.label}`}
+              message="Quando esse tipo for adicionado ao mock, ele aparece automaticamente nesta aba."
+            />
+          )}
 
           {totalPages > 1 ? (
             <nav className="client-posters-pagination" aria-label="Paginação">

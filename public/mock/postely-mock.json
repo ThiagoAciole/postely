@@ -46,6 +46,9 @@
               "sort_order": 4,
               "type": "feed"
             }
+          ],
+          "formats": [
+            "feed"
           ]
         },
         {
@@ -87,6 +90,9 @@
               "sort_order": 4,
               "type": "feed"
             }
+          ],
+          "formats": [
+            "feed"
           ]
         },
         {
@@ -112,6 +118,10 @@
               "sort_order": 2,
               "type": "feed"
             }
+          ],
+          "formats": [
+            "feed",
+            "story"
           ]
         },
         {
@@ -169,6 +179,9 @@
               "sort_order": 6,
               "type": "feed"
             }
+          ],
+          "formats": [
+            "feed"
           ]
         },
         {
@@ -218,6 +231,9 @@
               "sort_order": 5,
               "type": "feed"
             }
+          ],
+          "formats": [
+            "feed"
           ]
         },
         {
@@ -275,6 +291,9 @@
               "sort_order": 6,
               "type": "feed"
             }
+          ],
+          "formats": [
+            "feed"
           ]
         }
       ]

@@ -7,17 +7,23 @@ import {
   Images,
   MoreHorizontal,
 } from "lucide-react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { EmptyState } from "../../components/EmptyState/EmptyState";
 import { LoadingState } from "../../components/LoadingState/LoadingState";
 import { Button } from "../../components/ui/button";
 import { getPosterByClientAndSlug } from "../../services/content.service";
-import type { Client, ClientPoster, PosterImage } from "../../types/content";
+import type { Client, ClientPoster, PosterFormat, PosterImage } from "../../types/content";
 import { CaptionCard } from "./components/CaptionCard/CaptionCard";
 import "./style.css";
 
+function isPosterFormat(value: string | null): value is PosterFormat {
+  return value === "feed" || value === "story" || value === "reels";
+}
+
 export function GalleryPosters() {
   const { clientSlug, posterSlug } = useParams();
+  const [searchParams] = useSearchParams();
+  const selectedFormat = searchParams.get("format");
   const [client, setClient] = useState<Client | null>(null);
   const [poster, setPoster] = useState<ClientPoster | null>(null);
   const [images, setImages] = useState<PosterImage[]>([]);
@@ -38,7 +44,10 @@ export function GalleryPosters() {
           setImages([]);
           return;
         }
-        const sortedImages = [...result.poster.images].sort(
+        const filteredImages = isPosterFormat(selectedFormat)
+          ? result.poster.images.filter((image) => image.type === selectedFormat)
+          : result.poster.images;
+        const sortedImages = [...filteredImages].sort(
           (a, b) => a.sort_order - b.sort_order,
         );
         setClient(result.client);
@@ -53,7 +62,7 @@ export function GalleryPosters() {
     }
 
     loadData();
-  }, [clientSlug, posterSlug]);
+  }, [clientSlug, posterSlug, selectedFormat]);
 
   const selectedImage = images[selectedIndex] ?? null;
 

@@ -1,10 +1,12 @@
+export type PosterFormat = "feed" | "story" | "reels";
+
 export type PosterImage = {
   id: string;
   image_url: string;
   download_url: string;
   file_name: string;
   sort_order: number;
-  type: "feed" | "story";
+  type: PosterFormat;
 };
 
 export type ClientPoster = {
@@ -13,6 +15,7 @@ export type ClientPoster = {
   subtitle: string;
   cover: string;
   published_at: string;
+  formats?: PosterFormat[];
   images: PosterImage[];
 };
 

@@ -1,4 +1,4 @@
-import type { Client, ClientPoster } from "../types/content";
+import type { Client, ClientPoster, PosterFormat } from "../types/content";
 import { slugify } from "./slugify";
 
 export function getClientRouteSlug(client: Client) {
@@ -13,6 +13,7 @@ export function buildClientPath(client: Client) {
   return `/${getClientRouteSlug(client)}`;
 }
 
-export function buildPosterPath(client: Client, poster: ClientPoster) {
-  return `${buildClientPath(client)}/${getPosterRouteSlug(poster)}`;
+export function buildPosterPath(client: Client, poster: ClientPoster, format?: PosterFormat) {
+  const path = `${buildClientPath(client)}/${getPosterRouteSlug(poster)}`;
+  return format ? `${path}?format=${format}` : path;
 }
