@@ -204,6 +204,14 @@
               "file_name": "carne-não-é-só-proteína-4.png",
               "sort_order": 4,
               "type": "feed"
+            },
+            {
+              "id": "carne-não-é-só-proteína-5",
+              "image_url": "/mock/tiberio/posters/carne-não-é-só-proteína/5.png",
+              "download_url": "/mock/tiberio/posters/carne-não-é-só-proteína/5.png",
+              "file_name": "carne-não-é-só-proteína-5.png",
+              "sort_order": 5,
+              "type": "feed"
             }
           ]
         }
