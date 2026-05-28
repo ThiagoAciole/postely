@@ -1,10 +1,19 @@
 import type { ButtonHTMLAttributes } from "react";
-import "./style.css";
+import { Button as ShadcnButton } from "../ui/button";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary" | "danger";
 };
 
 export function Button({ variant = "primary", className = "", ...props }: Props) {
-  return <button className={`button button-${variant} ${className}`.trim()} {...props} />;
+  const mappedVariant =
+    variant === "primary" ? "default" : variant === "danger" ? "destructive" : "outline";
+
+  return (
+    <ShadcnButton
+      className={className}
+      variant={mappedVariant}
+      {...props}
+    />
+  );
 }

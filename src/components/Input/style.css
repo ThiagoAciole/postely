@@ -5,10 +5,6 @@
   font-weight: 600;
 }
 
-.input-control {
+.input-field .ui-input {
   width: 100%;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 12px;
-  font-size: 1rem;
 }

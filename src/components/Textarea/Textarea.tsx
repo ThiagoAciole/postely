@@ -1,4 +1,5 @@
 import type { TextareaHTMLAttributes } from "react";
+import { Textarea as ShadcnTextarea } from "../ui/textarea";
 import "./style.css";
 
 type Props = TextareaHTMLAttributes<HTMLTextAreaElement> & {
@@ -9,7 +10,7 @@ export function Textarea({ label, id, ...props }: Props) {
   return (
     <label className="textarea-field">
       <span>{label}</span>
-      <textarea id={id} className="textarea-control" {...props} />
+      <ShadcnTextarea id={id} {...props} />
     </label>
   );
 }

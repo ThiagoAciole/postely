@@ -5,10 +5,14 @@ create table if not exists public.galleries (
   title text not null,
   slug text not null unique,
   caption text not null,
+  published_at date not null default current_date,
   client_name text,
   created_at timestamptz not null default now(),
   updated_at timestamptz
 );
+
+alter table public.galleries
+add column if not exists published_at date not null default current_date;
 
 create table if not exists public.posters (
   id uuid primary key default gen_random_uuid(),

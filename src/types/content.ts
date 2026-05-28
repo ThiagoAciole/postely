@@ -12,6 +12,7 @@ export type ClientPoster = {
   title: string;
   subtitle: string;
   cover: string;
+  published_at: string;
   images: PosterImage[];
 };
 

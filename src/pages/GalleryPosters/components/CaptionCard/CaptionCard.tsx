@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Copy, NotebookText } from "lucide-react";
-import { Button } from "../../../../components/Button/Button";
+import { Copy } from "lucide-react";
+import { Button } from "../../../../components/ui/button";
+import { Card } from "../../../../components/ui/card";
 import { copyToClipboard } from "../../../../utils/clipboard";
 import "./style.css";
 
 export function CaptionCard({ caption }: { caption: string }) {
   const [copied, setCopied] = useState(false);
-  const [expanded, setExpanded] = useState(false);
 
   async function handleCopy() {
     await copyToClipboard(caption);
@@ -15,21 +15,24 @@ export function CaptionCard({ caption }: { caption: string }) {
   }
 
   return (
-    <div className="gallery-caption-card">
+    <Card className="gallery-caption-card">
       <div className="gallery-caption-header">
-        <div className="gallery-caption-title">
-          <NotebookText size={16} />
-          <span>Legenda</span>
-        </div>
-        <Button variant="secondary" onClick={handleCopy}>
-          <Copy size={16} />
-          {copied ? "Legenda copiada!" : "Copiar legenda"}
+        <span className="gallery-caption-title">Legenda sugerida</span>
+        <Button
+          className="gallery-caption-icon-button"
+          variant="ghost"
+          size="icon"
+          onClick={handleCopy}
+          aria-label="Copiar legenda"
+        >
+          <Copy size={21} />
         </Button>
       </div>
-      <p className={!expanded ? "gallery-caption-truncated" : ""}>{caption}</p>
-      <Button variant="secondary" onClick={() => setExpanded((value) => !value)}>
-        {expanded ? "Ver menos" : "Ver mais"}
+      <p className="gallery-caption-truncated">{caption}</p>
+      <Button className="gallery-caption-copy-button" variant="outline" onClick={handleCopy}>
+        <Copy size={18} />
+        {copied ? "Legenda copiada!" : "Copiar Legenda"}
       </Button>
-    </div>
+    </Card>
   );
 }

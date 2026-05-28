@@ -3,6 +3,36 @@ import { slugify } from "../utils/slugify";
 
 const MOCK_PATH = "/mock/postely-mock.json";
 
+function repairText(value: string) {
+  try {
+    return decodeURIComponent(
+      value
+        .split("")
+        .map((char) => `%${char.charCodeAt(0).toString(16).padStart(2, "0")}`)
+        .join(""),
+    );
+  } catch {
+    return value;
+  }
+}
+
+function normalizePosterText(poster: ClientPoster): ClientPoster {
+  return {
+    ...poster,
+    title: repairText(poster.title),
+    subtitle: repairText(poster.subtitle),
+  };
+}
+
+function normalizeClientText(client: Client): Client {
+  return {
+    ...client,
+    client_name: client.id === "tiberio" ? "Tibério Fernandes" : repairText(client.client_name),
+    job: repairText(client.job),
+    posters: client.posters.map(normalizePosterText),
+  };
+}
+
 function matchesClientSlug(client: Client, routeSlug: string) {
   return (
     routeSlug === client.id ||
@@ -18,7 +48,11 @@ function matchesPosterSlug(poster: ClientPoster, routeSlug: string) {
 export async function getContentData() {
   const response = await fetch(MOCK_PATH);
   if (!response.ok) throw new Error("Não foi possível carregar o JSON de conteúdo.");
-  return (await response.json()) as ContentData;
+  const data = (await response.json()) as ContentData;
+  return {
+    ...data,
+    clients: data.clients.map(normalizeClientText),
+  };
 }
 
 export async function getClientBySlug(clientSlug: string) {

@@ -1,5 +1,6 @@
+import { Card } from "../ui/card";
 import "./style.css";
 
 export function LoadingState({ text = "Carregando..." }: { text?: string }) {
-  return <div className="loading-state-card loading-state-center">{text}</div>;
+  return <Card className="loading-state-card loading-state-center">{text}</Card>;
 }

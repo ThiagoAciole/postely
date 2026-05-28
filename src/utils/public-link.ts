@@ -6,7 +6,7 @@ export function getClientRouteSlug(client: Client) {
 }
 
 export function getPosterRouteSlug(poster: ClientPoster) {
-  return poster.id || slugify(poster.title);
+  return slugify(poster.title) || poster.id;
 }
 
 export function buildClientPath(client: Client) {

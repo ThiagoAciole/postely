@@ -1,38 +1,47 @@
 .button {
   border: 1px solid transparent;
-  min-height: 44px;
-  border-radius: 12px;
-  padding: 10px 16px;
+  min-height: 48px;
+  border-radius: 10px;
+  padding: 12px 18px;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 800;
   cursor: pointer;
   transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
+  text-align: center;
 }
 
 .button-primary {
-  background: #4267f5;
+  background: linear-gradient(135deg, #8a38f5 0%, #6900dc 100%);
   color: #fff;
+  box-shadow: none;
 }
 
 .button-primary:hover {
-  background: #3154d4;
+  filter: brightness(0.96);
 }
 
 .button-secondary {
-  background: transparent;
-  border-color: #7490ff;
-  color: #4267f5;
+  background: #ffffff;
+  border-color: #7c14e8;
+  color: #6f12e8;
 }
 
 .button-secondary:hover {
-  background: #edf2ff;
+  background: #f6f0ff;
 }
 
 .button-danger {
   background: #ef4444;
   color: #fff;
+}
+
+@media (max-width: 520px) {
+  .button {
+    padding: 12px 14px;
+    font-size: 0.88rem;
+  }
 }

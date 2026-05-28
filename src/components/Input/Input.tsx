@@ -1,4 +1,5 @@
 import type { InputHTMLAttributes } from "react";
+import { Input as ShadcnInput } from "../ui/input";
 import "./style.css";
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
@@ -9,7 +10,7 @@ export function Input({ label, id, ...props }: Props) {
   return (
     <label className="input-field">
       <span>{label}</span>
-      <input id={id} className="input-control" {...props} />
+      <ShadcnInput id={id} {...props} />
     </label>
   );
 }
