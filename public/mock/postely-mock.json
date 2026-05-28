@@ -166,6 +166,46 @@
               "type": "feed"
             }
           ]
+        },
+        {
+          "id": "carne-não-é-só-proteína",
+          "title": "Carne não é só proteína",
+          "subtitle": "100g de carne não são 100g de proteína. 🥩⚠️\n\nMuita gente olha para o prato e acredita que está consumindo muito mais proteína do que realmente está.\n\nNa prática, a carne também é composta por água, gordura e outros nutrientes. Por isso, 100g de carne preparada geralmente entregam algo em torno de 25g a 35g de proteína, dependendo do corte, do tipo de carne e da forma de preparo.\n\nE é aí que entra a importância de entender melhor suas escolhas.\n\nPeixe, porco e boi podem ter quantidades parecidas de proteína, mas diferenças importantes em gordura, calorias e composição nutricional.\n\nOu seja: não existe alimento “certo” ou “errado”. Existe o que faz mais sentido para o seu objetivo, sua rotina e sua estratégia alimentar.\n\n✅ Quer ganhar massa muscular?\n✅ Quer emagrecer?\n✅ Quer melhorar a composição corporal?\n✅ Quer ajustar melhor suas refeições?\n\nA escolha da proteína precisa estar alinhada ao seu plano.\n\nCompare, entenda e escolha com estratégia.\n\n📌 Salve esse post para consultar depois.\n👊 Compartilhe com alguém que ainda acha que 100g de carne = 100g de proteína.\n\n#nutricao #nutricionista #proteina #hipertrofia #emagrecimento #composicaocorporal #nutricaoesportiva #dieta #alimentacaosaudavel #tiberiofernandes",
+          "cover": "/mock/tiberio/posters/carne-não-é-só-proteína/1.png",
+          "images": [
+            {
+              "id": "carne-não-é-só-proteína-1",
+              "image_url": "/mock/tiberio/posters/carne-não-é-só-proteína/1.png",
+              "download_url": "/mock/tiberio/posters/carne-não-é-só-proteína/1.png",
+              "file_name": "carne-não-é-só-proteína-1.png",
+              "sort_order": 1,
+              "type": "feed"
+            },
+            {
+              "id": "carne-não-é-só-proteína-2",
+              "image_url": "/mock/tiberio/posters/carne-não-é-só-proteína/2.png",
+              "download_url": "/mock/tiberio/posters/carne-não-é-só-proteína/2.png",
+              "file_name": "carne-não-é-só-proteína-2.png",
+              "sort_order": 2,
+              "type": "feed"
+            },
+            {
+              "id": "carne-não-é-só-proteína-3",
+              "image_url": "/mock/tiberio/posters/carne-não-é-só-proteína/3.png",
+              "download_url": "/mock/tiberio/posters/carne-não-é-só-proteína/3.png",
+              "file_name": "carne-não-é-só-proteína-3.png",
+              "sort_order": 3,
+              "type": "feed"
+            },
+            {
+              "id": "carne-não-é-só-proteína-4",
+              "image_url": "/mock/tiberio/posters/carne-não-é-só-proteína/4.png",
+              "download_url": "/mock/tiberio/posters/carne-não-é-só-proteína/4.png",
+              "file_name": "carne-não-é-só-proteína-4.png",
+              "sort_order": 4,
+              "type": "feed"
+            }
+          ]
         }
       ]
     }
