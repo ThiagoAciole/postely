@@ -50,6 +50,7 @@
 html {
   box-sizing: border-box;
   overflow-x: hidden;
+  min-height: 100%;
 }
 
 *,
@@ -61,12 +62,17 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  min-height: 100%;
   color: var(--foreground);
   background: var(--background);
   overflow-x: hidden;
   transition:
     background 0.18s ease,
     color 0.18s ease;
+}
+
+#root {
+  min-height: 100vh;
 }
 
 a {

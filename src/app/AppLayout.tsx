@@ -7,7 +7,9 @@ export function AppLayout() {
   return (
     <div className="app-layout">
       <Header />
-      <Outlet />
+      <div className="app-layout-content">
+        <Outlet />
+      </div>
       <footer className="postely-footer">
         <div className="postely-footer-inner">
           <div className="postely-footer-brand">

@@ -13,6 +13,7 @@ import { LoadingState } from "../../components/LoadingState/LoadingState";
 import { Button } from "../../components/ui/button";
 import { getPosterByClientAndSlug } from "../../services/content.service";
 import type { Client, ClientPoster, PosterFormat, PosterImage } from "../../types/content";
+import storyMockup from "../../assets/mockup.png";
 import { CaptionCard } from "./components/CaptionCard/CaptionCard";
 import "./style.css";
 
@@ -65,6 +66,7 @@ export function GalleryPosters() {
   }, [clientSlug, posterSlug, selectedFormat]);
 
   const selectedImage = images[selectedIndex] ?? null;
+  const isStoryPreview = selectedImage?.type === "story" || selectedFormat === "story";
 
   function goToPreviousSlide() {
     setSelectedIndex((index) => (index === 0 ? images.length - 1 : index - 1));
@@ -135,12 +137,26 @@ export function GalleryPosters() {
           <div className="gallery-posters-content">
             <div className="gallery-posters-showcase">
               {selectedImage ? (
-                <div className="gallery-posters-preview">
+                <div
+                  className={`gallery-posters-preview ${
+                    isStoryPreview ? "gallery-posters-preview-story" : ""
+                  }`.trim()}
+                >
                   <img
+                    className="gallery-posters-preview-image"
                     src={selectedImage.image_url}
                     alt={selectedImage.file_name}
                     decoding="async"
                   />
+                  {isStoryPreview ? (
+                    <img
+                      className="gallery-posters-story-mockup"
+                      src={storyMockup}
+                      alt=""
+                      aria-hidden="true"
+                      decoding="async"
+                    />
+                  ) : null}
                   <button
                     className="gallery-posters-download-current"
                     type="button"

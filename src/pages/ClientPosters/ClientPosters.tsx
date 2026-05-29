@@ -8,7 +8,7 @@ import {
   LayoutPanelTop,
   Smartphone,
 } from "lucide-react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { EmptyState } from "../../components/EmptyState/EmptyState";
 import { LoadingState } from "../../components/LoadingState/LoadingState";
 import { Avatar, AvatarFallback, AvatarImage } from "../../components/ui/avatar";
@@ -71,6 +71,7 @@ function getPosterCoverByFormat(poster: Client["posters"][number], format: Poste
 
 export function ClientPosters() {
   const { clientSlug } = useParams();
+  const navigate = useNavigate();
   const [client, setClient] = useState<Client | null>(null);
   const [activeFormat, setActiveFormat] = useState<PosterFormat>("feed");
   const [currentPage, setCurrentPage] = useState(1);
@@ -115,6 +116,11 @@ export function ClientPosters() {
     (currentPage - 1) * POSTERS_PER_PAGE,
     currentPage * POSTERS_PER_PAGE,
   );
+
+  function openPoster(poster: Client["posters"][number]) {
+    if (!client) return;
+    navigate(buildPosterPath(client, poster, activeFormat));
+  }
 
   return (
     <main className="client-posters-container client-posters-page-space">
@@ -186,7 +192,19 @@ export function ClientPosters() {
           {currentPagePosters.length > 0 ? (
             <div className="client-posters-grid">
               {currentPagePosters.map((poster) => (
-              <Card key={poster.id} className="client-posters-card">
+                <Card
+                  key={poster.id}
+                  className="client-posters-card"
+                  role="link"
+                  tabIndex={0}
+                  onClick={() => openPoster(poster)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      openPoster(poster);
+                    }
+                  }}
+                >
                 <div className="client-posters-card-cover">
                   <Badge className="client-posters-slide-badge">
                     <Images size={13} />
@@ -208,9 +226,11 @@ export function ClientPosters() {
 
                   <Button
                     className="client-posters-link-button"
-                    onClick={() =>
-                      (window.location.href = buildPosterPath(client, poster, activeFormat))
-                    }
+                    type="button"
+                    onClick={(event) => {
+                      event.stopPropagation();
+                      openPoster(poster);
+                    }}
                   >
                     Visualizar e Baixar
                     <ExternalLink size={15} />
