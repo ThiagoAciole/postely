@@ -7,6 +7,8 @@ import "./style.css";
 
 export function CaptionCard({ caption }: { caption: string }) {
   const [copied, setCopied] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const hasLongCaption = caption.length > 220;
 
   async function handleCopy() {
     await copyToClipboard(caption);
@@ -17,22 +19,36 @@ export function CaptionCard({ caption }: { caption: string }) {
   return (
     <Card className="gallery-caption-card">
       <div className="gallery-caption-header">
-        <span className="gallery-caption-title">Legenda sugerida</span>
+        <span className="gallery-caption-title">Legenda</span>
         <Button
-          className="gallery-caption-icon-button"
-          variant="ghost"
-          size="icon"
+          className="gallery-caption-copy-button"
+          variant="outline"
           onClick={handleCopy}
           aria-label="Copiar legenda"
         >
-          <Copy size={21} />
+          <Copy size={18} />
+          {copied ? "Copiado!" : "Copiar"}
         </Button>
       </div>
-      <p className="gallery-caption-truncated">{caption}</p>
-      <Button className="gallery-caption-copy-button" variant="outline" onClick={handleCopy}>
-        <Copy size={18} />
-        {copied ? "Legenda copiada!" : "Copiar Legenda"}
-      </Button>
+      <p
+        className={
+          expanded || !hasLongCaption
+            ? "gallery-caption-text"
+            : "gallery-caption-text gallery-caption-truncated"
+        }
+      >
+        {caption}
+      </p>
+      {hasLongCaption ? (
+        <Button
+          className="gallery-caption-more-button"
+          variant="outline"
+          onClick={() => setExpanded((current) => !current)}
+          aria-expanded={expanded}
+        >
+          {expanded ? "Ver Menos" : "Ver Mais"}
+        </Button>
+      ) : null}
     </Card>
   );
 }
